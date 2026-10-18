@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101116">
+  <meta name="description" content="Asisten AI untuk menjawab pertanyaan dan merangkum tugas.">
+  <title>Asisten AI</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <div class="brand">
+        <div class="brand-mark" aria-hidden="true"><span>✦</span></div>
+        <div><strong>Asisten AI</strong><small>Teman berpikir kamu</small></div>
+        <button class="icon-button close-sidebar" id="closeSidebar" aria-label="Tutup menu">×</button>
+      </div>
+      <button class="new-chat" id="newChat"><span>＋</span> Percakapan baru</button>
+      <div class="side-label">FITUR</div>
+      <button class="nav-item active" data-mode="chat"><span class="nav-icon">◉</span> Tanya AI</button>
+      <button class="nav-item" data-mode="summary"><span class="nav-icon">☷</span> Rangkuman tugas</button>
+      <div class="sidebar-bottom">
+        <div class="status-dot"></div>
+        <div><strong>Asisten siap membantu</strong><small>Jawaban dibuat oleh AI</small></div>
+      </div>
+    </aside>
+
+    <main class="main-panel">
+      <header class="topbar">
+        <button class="icon-button menu-button" id="openSidebar" aria-label="Buka menu">☰</button>
+        <div class="topbar-title"><span class="online-dot"></span><span id="topTitle">Tanya AI</span></div>
+        <div class="topbar-right"><span class="mode-pill">● Mode gelap</span></div>
+      </header>
+
+      <section class="conversation" id="conversation" aria-live="polite">
+        <div class="welcome" id="welcome">
+          <div class="welcome-orb"><span>✦</span></div>
+          <p class="eyebrow">SELAMAT DATANG DI ASISTEN AI</p>
+          <h1>Ada yang bisa<br><span>aku bantu?</span></h1>
+          <p class="welcome-copy">Tanyakan apa saja atau buat rangkuman tugasmu. Kita mulai dari sini.</p>
+          <div class="suggestions" id="suggestions">
+            <button class="suggestion" data-prompt="Jelaskan apa itu flowchart dan sebutkan simbol-simbolnya."><span>⌘</span><div><strong>Belajar hal baru</strong><small>Jelaskan suatu materi dengan mudah</small></div><b>↗</b></button>
+            <button class="suggestion" data-prompt="Bantu aku membuat rangkuman dari teks berikut:\n\n[Tulis atau tempel teks tugas di sini]"><span>☷</span><div><strong>Rangkum tugas</strong><small>Ambil inti dari teks yang panjang</small></div><b>↗</b></button>
+            <button class="suggestion" data-prompt="Buatkan contoh teks presentasi singkat untuk tugas sekolah."><span>✎</span><div><strong>Siapkan presentasi</strong><small>Buat susunan yang rapi dan jelas</small></div><b>↗</b></button>
+          </div>
+        </div>
+        <div class="messages" id="messages"></div>
+      </section>
+
+      <footer class="composer-wrap">
+        <div class="mode-hint" id="modeHint"><span>✦</span> Tanya apa pun, aku siap membantu.</div>
+        <form class="composer" id="chatForm">
+          <textarea id="promptInput" rows="1" placeholder="Ketik pertanyaanmu di sini..." aria-label="Pesan untuk Asisten AI" required></textarea>
+          <div class="composer-bottom">
+            <span class="input-note"><span>↵</span> Enter untuk kirim · Shift + Enter untuk baris baru</span>
+            <button class="send-button" id="sendButton" type="submit" aria-label="Kirim pesan"><span>Kirim</span><b>↑</b></button>
+          </div>
+        </form>
+        <p class="disclaimer">Asisten AI bisa membuat kesalahan. Periksa kembali informasi penting.</p>
+      </footer>
+    </main>
+  </div>
+  <div class="mobile-overlay" id="overlay"></div>
+  <script src="/app.js" defer></script>
+</body>
+</html>
